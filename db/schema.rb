@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_06_101102) do
+ActiveRecord::Schema.define(version: 2021_07_07_114945) do
 
   create_table "answers", force: :cascade do |t|
     t.string "answer"
@@ -61,6 +61,23 @@ ActiveRecord::Schema.define(version: 2021_07_06_101102) do
     t.integer "student_id"
     t.index ["student_id"], name: "index_tests_on_student_id"
     t.index ["teacher_id"], name: "index_tests_on_teacher_id"
+  end
+
+  create_table "user_sessions", force: :cascade do |t|
+    t.string "username"
+    t.string "password"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "email"
+    t.string "crypted_password"
+    t.string "password_salt"
+    t.string "persistence_token"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
