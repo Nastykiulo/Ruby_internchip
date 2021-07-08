@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_07_114945) do
+ActiveRecord::Schema.define(version: 2021_07_08_094105) do
 
   create_table "answers", force: :cascade do |t|
     t.string "answer"
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 2021_07_07_114945) do
     t.string "persistence_token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "role"
   end
 
 end
