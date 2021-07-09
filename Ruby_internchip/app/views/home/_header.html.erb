@@ -11,6 +11,7 @@
           <%= link_to 'About Us', home_about_path, class:"nav-link active" %>
         </li>
         <% if user_signed_in? %>
+        <%# navbar for autorized user %>
           <li class="nav-item">
             <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class:"nav-link active" %>
           </li>
@@ -18,11 +19,21 @@
             <%= link_to 'Edit user profile', edit_user_registration_path, class:"nav-link active" %>
           </li>
         <%else %>
+        <%# navbar for unautorized user %>
           <li class="nav-item">
             <%= link_to 'Sign up', new_user_registration_path, class:"nav-link active" %>
           </li>
           <li class="nav-item">
             <%= link_to 'Sign in', new_user_session_path, class:"nav-link active" %>
+          </li>
+        <% end %>
+        <%# navbar fo teacher role %>
+        <% if current_user.teacher? %>
+          <li class="nav-item">
+            <%= link_to 'Students list', students_path, class:"nav-link active" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Add student', new_student_path, class:"nav-link active" %>
           </li>
         <% end %>
       </ul>

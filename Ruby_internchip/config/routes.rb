@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  #devise_for :users
   # devise_for :users, controllers: {
   #      :registrations => "users/registrations" }
-
+  devise_for :users, controllers: { registrations: "users/registrations" }
   resources :answers
   resources :questions
   resources :students
