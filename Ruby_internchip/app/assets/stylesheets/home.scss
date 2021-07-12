@@ -4,3 +4,8 @@
 body{
     background-color: white;
 }
+
+.main-content{
+    /* 1 flex-grow, 0 flex-shrink, auto flex-basis */
+    flex: 1 0 auto;
+ }

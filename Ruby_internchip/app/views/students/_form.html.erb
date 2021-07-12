@@ -26,6 +26,10 @@
     <%= form.text_field :gpa %>
   </div>
 
+  <div class="field">
+    <%= form.number_field :user_id, id: :student_teacher_id, value: current_user.id, type: :hidden %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

@@ -28,13 +28,15 @@
           </li>
         <% end %>
         <%# navbar fo teacher role %>
-        <% if current_user.teacher? %>
+        <% if user_signed_in? && current_user.teacher? %>
           <li class="nav-item">
             <%= link_to 'Students list', students_path, class:"nav-link active" %>
           </li>
           <li class="nav-item">
-            <%= link_to 'Add student', new_student_path, class:"nav-link active" %>
+            <%= link_to 'Tests list', tests_path, class:"nav-link active" %>
           </li>
+          <% else %>
+            <%# current_user =  %>
         <% end %>
       </ul>
     </div>
