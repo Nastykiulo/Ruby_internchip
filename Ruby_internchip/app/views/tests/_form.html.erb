@@ -1,4 +1,4 @@
-<%= form_with(model: test, local: true,  html: {multipart:true,autoProcessQueue: false, class: "dropzone", id: "my-dropzone"}) do |form| %>
+<%= form_with(model: test, local: true ) do |form| %>
   <% if test.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(test.errors.count, "error") %> prohibited this test from being saved:</h2>
@@ -23,6 +23,9 @@
   <div class="field dropezone fallback">
     <%= form.label :question_list %>
     <%= form.file_field :question_list %>
+    <%# <%= form.fields_for html: {multipart:true, autoProcessQueue: false, class: "dropzone", id: "my-dropzone"} do |dropezone|%> 
+      <%# <%= dropezone.file_field :question_list %>
+    <%# <% end %>
   </div>  
 
 

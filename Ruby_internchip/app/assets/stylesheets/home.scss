@@ -8,4 +8,11 @@ body{
 .main-content{
     /* 1 flex-grow, 0 flex-shrink, auto flex-basis */
     flex: 1 0 auto;
- }
+}
+
+.customA1{
+    font-size: 25px;
+}
+.customA2{
+    font-size: 18px;
+}

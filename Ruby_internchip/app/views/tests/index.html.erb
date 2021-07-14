@@ -11,7 +11,8 @@
                 Test Status: <%= test.status %> <br/>
                 Test DueDate: <%= test.due_date %>
               </p>
-              <%= link_to 'Questions', questions_path, class: "btn btn-light" %>
+              <%#  /tests/id/questions/new%>
+              <%= link_to 'Questions', test_questions_path(test_id: test.id), class: "btn btn-light" %>
               <%= link_to 'Edit', edit_test_path(test), class: "btn btn-light" %>
               <%= link_to 'Destroy', test, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-light" %>
           </div>

@@ -1,6 +1,6 @@
 class TestsController < ApplicationController
   before_action :set_test, only: %i[ show edit update destroy ]
-
+  #@tests = Test.new(params[:test_id])
   # GET /tests or /tests.json
   def index
     @tests = Test.all
@@ -22,7 +22,8 @@ class TestsController < ApplicationController
   # POST /tests or /tests.json
   def create
     @test = Test.new(test_params)
-
+    #@test.user_id = current_user.id
+    
     respond_to do |format|
       if @test.save
         format.html { redirect_to @test, notice: "Test was successfully created." }
