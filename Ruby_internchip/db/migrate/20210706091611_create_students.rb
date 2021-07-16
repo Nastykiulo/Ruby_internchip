@@ -4,7 +4,7 @@ class CreateStudents < ActiveRecord::Migration[5.2]
       t.string :first_name
       t.string :last_name
       t.float :gpa
-
+      #t.integer :teacher_id
       t.timestamps
     end
   end

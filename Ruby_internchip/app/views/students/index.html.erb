@@ -14,6 +14,7 @@
   <tbody>
     <% @students.each do |student| %>
       <tr scope="row">
+        <td><%= student.id %></td>
         <td><%= student.first_name %></td>
         <td><%= student.last_name %></td>
         <td><%= student.gpa %></td>

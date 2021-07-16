@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_15_164852) do
+ActiveRecord::Schema.define(version: 2021_07_16_104833) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -52,6 +52,11 @@ ActiveRecord::Schema.define(version: 2021_07_15_164852) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.index ["user_id"], name: "index_students_on_user_id"
+  end
+
+  create_table "students_teachers", id: false, force: :cascade do |t|
+    t.integer "student_id"
+    t.integer "teacher_id"
   end
 
   create_table "teachers", force: :cascade do |t|

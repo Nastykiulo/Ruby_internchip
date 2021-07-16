@@ -28,4 +28,8 @@ devise_for :admins, controllers: { registrations: "admins/registrations" }
   resources :teachers  do
     resources :tests
   end
+
+  resources :students do
+    get :teacher_id, to: "students#new" #-> yoururl.com/registrations/:course_id
+ end
 end

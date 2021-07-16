@@ -8,5 +8,5 @@
 
 User.create(email: 'admin@gmail.com', password: 'admin', password_confirmation: 'admin', role: :admin)
 User.create(email: 'guest@gmail.com', password: 'guest', password_confirmation: 'guest', role: :guest)
-#teacher = User.create(email: 'teacher@gmail.com', password: 'teacher', password_confirmation: 'teacher', role: 1)
-#student = User.create(email: 'student@gmail.com', password: 'student', password_confirmation: 'student', role: 2)
+User.create(email: 'teacher@gmail.com', password: 'teacher', password_confirmation: 'teacher', role: 1)
+User.create(email: 'student@gmail.com', password: 'student', password_confirmation: 'student', role: 2)
