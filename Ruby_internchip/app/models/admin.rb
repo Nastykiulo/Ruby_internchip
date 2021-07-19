@@ -1,4 +1,4 @@
-class Admin < ApplicationRecord
+class Admin < User
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   enum role: [:admin]
@@ -6,8 +6,5 @@ class Admin < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  private
-   def default_role
-      self.role ||= :admin
-   end
+  
 end

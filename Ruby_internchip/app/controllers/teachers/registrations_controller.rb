@@ -1,4 +1,4 @@
-class Admins::RegistrationsController < Devise::RegistrationsController
+class Teachers::RegistrationsController < Devise::RegistrationsController
     # Override the action you want here.
     #before_action :configure_sign_up_params, only: [:create]
     before_action :configure_permitted_parameters
@@ -8,7 +8,7 @@ class Admins::RegistrationsController < Devise::RegistrationsController
   end
   #then the method called in the before action where you permit the parameters
   def create
-    params[:user] = params[:user]&.merge(type: 'Admin')
+    params[:user] = params[:user]&.merge(type: 'Teacher')
     super
   end  
   protected  

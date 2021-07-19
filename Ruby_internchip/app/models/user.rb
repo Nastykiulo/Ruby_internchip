@@ -4,6 +4,25 @@ class User < ApplicationRecord
   
 
    enum role: [:guest, :teacher, :student, :admin]
+   def admin?
+      type == 'Admin'
+   end
+   def teacher?
+      type == 'Teacher'
+   end
+   def student?
+      type == 'Student'
+   end
+
+   # Serialize string instead of BSON
+   def self.serialize_into_session(record)
+      [record.to_key.map(&:to_s), record.authenticatable_salt]
+   end
+
+   # Serialize string instead of BSON
+   def self.serialize_into_cookie(record)
+      [record.to_key.map(&:to_s), record.rememberable_value]
+   end
   # after_initialize :set_default_role, :if => :new_record?
 
   # def set_default_role
