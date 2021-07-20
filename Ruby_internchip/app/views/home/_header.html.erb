@@ -26,6 +26,9 @@
           <li class="nav-item">
             <%= link_to 'Sign in', new_user_session_path, class:"nav-link active" %>
           </li>
+          <li class="nav-item">
+            <%= link_to 'Sign in admin', new_admin_session_path, class:"nav-link active" %>
+          </li>
         <% end %>
         <%# navbar fo teacher role %>
         <% if user_signed_in? && current_user.teacher? %>
@@ -39,7 +42,9 @@
             <%# current_user =  %>
         <% end %>
         <% if admin_signed_in? %>
-          <%= link_to 'Log out admin', destroy_user_session_path, method: :delete %>
+          <%= link_to 'Create a student', new_student_registration_path, class:"nav-link active" %>
+          <%= link_to 'Create a teacher', new_teacher_registration_path, class:"nav-link active" %>
+          <%= link_to 'Log out admin', destroy_user_session_path, method: :delete, class:"nav-link active" %>
         <%end%>
       </ul>
     </div>
